@@ -3,10 +3,6 @@ description: Run omnictl commands in a GitHub action
 author: jdmcmahan
 
 inputs:
-  working-directory:
-    description: The working directory from which to execute the command
-    required: false
-    default: './'
   omni-endpoint:
     description: The Omni endpoint URL generated with your service account (https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/)
     required: true
@@ -24,4 +20,4 @@ runs:
   env:
     OMNI_ENDPOINT: ${{ inputs.omni-endpoint }}
     OMNI_SERVICE_ACCOUNT_KEY: ${{ inputs.omni-service-account-key }}
-  entrypoint: cd ${{ inputs.working-directory }} && ${{ inputs.command }}
+  entrypoint: ${{ inputs.command }}
