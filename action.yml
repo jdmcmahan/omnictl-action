@@ -20,4 +20,5 @@ runs:
   env:
     OMNI_ENDPOINT: ${{ inputs.omni-endpoint }}
     OMNI_SERVICE_ACCOUNT_KEY: ${{ inputs.omni-service-account-key }}
-  entrypoint: ${{ inputs.command }}
+  args:
+    - ${{ inputs.command }}
