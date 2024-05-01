@@ -21,4 +21,6 @@ runs:
     OMNI_ENDPOINT: ${{ inputs.omni-endpoint }}
     OMNI_SERVICE_ACCOUNT_KEY: ${{ inputs.omni-service-account-key }}
   args:
+    - /bin/sh
+    - '-c'
     - ${{ inputs.command }}
