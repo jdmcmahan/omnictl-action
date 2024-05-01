@@ -1,0 +1,23 @@
+name: omnictl
+description: Run omnictl commands in a GitHub action
+author: jdmcmahan
+
+inputs:
+  omni_endpoint:
+    description: The Omni endpoint URL generated with your service account (https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/)
+    required: true
+  omni_service_account_key:
+    description: The Omni service account key (https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/)
+    required: true
+  command:
+    description: The omnictl command to run
+    required: true
+    default: omnictl --version
+
+runs:
+  using: docker
+  image: mcmahan/omnictl:0.34.0
+  env:
+    OMNI_ENDPOINT: ${{ imputs.omni_endpoint }}
+    OMNI_SERVICE_ACCOUNT_KEY: ${{ inputs.omni_service_account_key }}
+  entrypoint: ${{ inputs.command }}
