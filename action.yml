@@ -1,6 +1,9 @@
 name: omnictl
 description: Run omnictl commands in a GitHub action
 author: jdmcmahan
+branding:
+  icon: terminal
+  color: orange
 
 inputs:
   working-directory:
