@@ -2,5 +2,14 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "customManagers": [
+    {
+      "description": "Version for omnictl Docker image",
+      "customType": "regex",
+      "fileMatch": ["^action\\.ya?ml$"],
+      "matchStrings": ["image:\\s*docker://(?<depName>.*):(?<currentValue>[\\d.]+)"],
+      "datasourceTemplate": "docker"
+    }
   ]
 }
