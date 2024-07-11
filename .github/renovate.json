@@ -1,7 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommits"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["mcmahan/omnictl"],
+      "matchUpdateTypes": ["major"],
+      "semanticCommitType": "feat!"
+    },
+    {
+      "matchPackageNames": ["mcmahan/omnictl"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "semanticCommitType": "feat"
+    }
   ],
   "customManagers": [
     {
