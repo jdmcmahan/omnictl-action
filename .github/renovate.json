@@ -6,13 +6,22 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["mcmahan/omnictl"],
-      "matchUpdateTypes": ["major"],
+      "matchPackageNames": [
+        "mcmahan/omnictl"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "semanticCommitType": "feat!"
     },
     {
-      "matchPackageNames": ["mcmahan/omnictl"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": [
+        "mcmahan/omnictl"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "semanticCommitType": "feat"
     }
   ],
@@ -20,8 +29,12 @@
     {
       "description": "Version for omnictl Docker image",
       "customType": "regex",
-      "fileMatch": ["^action\\.ya?ml$"],
-      "matchStrings": ["image:\\s*docker://(?<depName>.*):(?<currentValue>[\\d.]+)"],
+      "managerFilePatterns": [
+        "/^action\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "image:\\s*docker://(?<depName>.*):(?<currentValue>[\\d.]+)"
+      ],
       "datasourceTemplate": "docker"
     }
   ]
