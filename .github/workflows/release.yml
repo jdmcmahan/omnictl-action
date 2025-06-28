@@ -19,7 +19,7 @@ jobs:
 
       - name: Get next version
         id: get-next-version
-        uses: thenativeweb/get-next-version@2.6.3
+        uses: thenativeweb/get-next-version@2.7.1
         with:
           prefix: 'v'
 
