@@ -23,7 +23,7 @@ inputs:
 
 runs:
   using: docker
-  image: docker://mcmahan/omnictl:1.4.6
+  image: docker://mcmahan/omnictl:1.4.7
   env:
     OMNI_ENDPOINT: ${{ inputs.omni-endpoint }}
     OMNI_SERVICE_ACCOUNT_KEY: ${{ inputs.omni-service-account-key }}
