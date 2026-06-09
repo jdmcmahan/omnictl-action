@@ -10,6 +10,7 @@ inputs:
     description: The working directory from which to execute the command
     required: false
     default: './'
+    deprecationMessage: This input was a workaround for inconsistent relative path resolution based on omnictl's working directory. Starting with omnictl version 1.8.0, the `cluster template` command now consistently resolves all paths relative to the template file.
   omni-endpoint:
     description: The Omni endpoint URL generated with your service account (https://omni.siderolabs.com/docs/how-to-guides/how-to-create-a-service-account/)
     required: true
