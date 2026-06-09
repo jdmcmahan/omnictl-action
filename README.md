@@ -55,10 +55,9 @@ jobs:
       - name: Run omnictl
         uses: jdmcmahan/omnictl-action@v1
         with:
-          working-directory: ./path/to/cluster/resources/
           omni-endpoint: ${{ secrets.OMNI_ENDPOINT }}
           omni-service-account-key: ${{ secrets.OMNI_SERVICE_ACCOUNT_KEY }}
-          command: omnictl cluster template -f cluster.yaml validate
+          command: omnictl cluster template -f ./path/to/cluster/resources/cluster.yaml validate
 ```
 
 ### Sync a cluster template with Omni
@@ -82,10 +81,9 @@ jobs:
       - name: Run omnictl
         uses: jdmcmahan/omnictl-action@v1
         with:
-          working-directory: ./path/to/cluster/resources/
           omni-endpoint: ${{ secrets.OMNI_ENDPOINT }}
           omni-service-account-key: ${{ secrets.OMNI_SERVICE_ACCOUNT_KEY }}
-          command: omnictl cluster template -f cluster.yaml sync --verbose
+          command: omnictl cluster template -f ./path/to/cluster/resources/cluster.yaml sync --verbose
 ```
 
 ### Create or update a resource directly
@@ -109,8 +107,7 @@ jobs:
       - name: Run omnictl
         uses: jdmcmahan/omnictl-action@v1
         with:
-          working-directory: ./path/to/cluster/resources/
           omni-endpoint: ${{ secrets.OMNI_ENDPOINT }}
           omni-service-account-key: ${{ secrets.OMNI_SERVICE_ACCOUNT_KEY }}
-          command: omnictl apply -f resource.yaml --verbose
+          command: omnictl apply -f ./path/to/cluster/resources/resource.yaml --verbose
 ```
